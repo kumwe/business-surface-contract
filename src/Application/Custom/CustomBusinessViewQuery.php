@@ -5,20 +5,26 @@ declare(strict_types=1);
 namespace Kumwe\BusinessSurface\Contract\Application\Custom;
 
 use Kumwe\Context\Value\ExecutionContext;
-use Kumwe\Extension\Spi\BusinessRecord\Application\BusinessRecordRequestGuard;
+use Kumwe\Record\Model\BusinessRecordRequestGuard;
 use Kumwe\Record\Query\RecordQuerySpecification;
 
 /** Validated, delivery-neutral query for one signed custom business view. @since 0.2.0 */
 final readonly class CustomBusinessViewQuery
 {
     /**
-     * @param  ExecutionContext          $context                 Authenticated host-issued context for the active invocation.
-     * @param  string                    $definitionIdentifier    Published business definition UUID or multi-segment handle the view belongs to.
-     * @param  string                    $view                    Manifest-declared handle of the custom view being rendered.
-     * @param  RecordQuerySpecification  $records                 Bounded browse specification selecting the records the view draws on.
-     * @param  array<string, mixed>      $parameters              Caller-supplied view parameters, budget-checked as a custom payload.
+     * @param  ExecutionContext          $context                 Authenticated host-issued context for the active
+     *     invocation.
+     * @param  string                    $definitionIdentifier    Published business definition UUID or multi-segment
+     *     handle the view belongs to.
+     * @param  string                    $view                    Manifest-declared handle of the custom view being
+     *     rendered.
+     * @param  RecordQuerySpecification  $records                 Bounded browse specification selecting the records
+     *     the view draws on.
+     * @param  array<string, mixed>      $parameters              Caller-supplied view parameters, budget-checked as a
+     *     custom payload.
      * @param  ?string                   $organizationIdentifier  Organization scope, when the definition requires one.
-     * @param  ?string                   $recordId                Single record the view is anchored to, or null for a collection view.
+     * @param  ?string                   $recordId                Single record the view is anchored to, or null for a
+     *     collection view.
      *
      * @since  0.2.0
      */
