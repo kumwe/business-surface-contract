@@ -1,9 +1,9 @@
 # Releasing
 
-The newest stable heading in CHANGELOG.md records the release version. This package
-has no recorded version while Record Query is unreleased.
-Idempotency, Record Values and Record Model use their published 0.1.0 versions. Maintainers review
-and rebase-merge the release PR into the default branch. No manual setup command is required.
+The newest stable heading in CHANGELOG.md records version 0.1.0.
+All production dependencies select exact published stable versions. Maintainers
+review and rebase-merge the release PR into the default branch. No manual setup
+command is required.
 
 The release workflow reuses the complete package CI at the actual post-rebase
 commit: syntax, API and architecture checks, maximum-level static analysis,
@@ -33,9 +33,6 @@ Before publication, the workflow resolves production dependencies and verifies
 all selected Kumwe stable version tags against Composer source and dist commits.
 Run bash tools/test-package-dependencies.sh when changing that verifier.
 
-The Unreleased-only changelog makes the publisher finish successfully without
-creating a tag or release. Production dependency verification only runs when a
-version is recorded. Before recording the first stable version, select exact
-a published stable Record Query version;
-the dependency verifier refuses source branches. Current source repair branches
-are tested package inputs, not stable release evidence.
+The initial release record selects only published stable package dependencies.
+The dependency verifier refuses source branches and validates selected tag, source
+and distribution commit identities before publication.

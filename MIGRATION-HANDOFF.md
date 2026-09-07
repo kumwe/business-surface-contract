@@ -587,7 +587,7 @@ documentation:
   integration_or_consumer: docs/integration.md
   examples:
   - examples/standalone.php
-  changelog_record: CHANGELOG.md / Unreleased
+  changelog_record: CHANGELOG.md / 0.1.0
 release_expectations:
   version_policy: SemVer; initial version chosen only after review; exact pre-1.0
     consumer pin after independent verification
@@ -755,8 +755,8 @@ decisions:
 - BSC-002 explicitly limits retained inputs to 100000 nodes to match GenericV1; exact
   accepted/refused boundary tests cover the intentional initial-contract restriction.
 blockers:
-- Human review and merge of source repairs; stable Idempotency and Record releases are pending
-- Exact stable dependency pins and initial release record remain pending
+- Human review and merge of the initial 0.1.0 release record
+- Verify successful default-branch publication and the actual 0.1.0 tag/source identity
 - Proposed dependency ceiling amendment requires review
 - Business Definition 0.1.0 and canonical Record Model/Query source repairs
   must install without stable aliases

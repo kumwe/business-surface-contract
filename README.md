@@ -2,7 +2,7 @@
 
 Portable custom business action, view and field presentation contracts.
 
-Requires PHP 8.5 and the runtime dependencies in `composer.json`. The canonical namespace is `Kumwe\BusinessSurface\Contract\`. This development candidate is not yet released: do not adopt it into App before an independently verified immutable release.
+Requires PHP 8.5 and the runtime dependencies in `composer.json`. The canonical namespace is `Kumwe\BusinessSurface\Contract\`. Version 0.1.0 is recorded for automatic publication after human merge. Confirm the published tag and source identity before the separate verification and App adoption stages.
 
 Run `composer install`, `composer check`, and `composer examples`. [Public API](docs/public-api.md), [architecture](docs/architecture.md), [integration](docs/integration.md), and [release protocol](docs/releasing.md) describe the contract.
 
