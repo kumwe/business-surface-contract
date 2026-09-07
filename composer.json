@@ -12,7 +12,7 @@
     "kumwe/conversion": "0.1.0",
     "kumwe/canonical-json": "0.1.1",
     "kumwe/idempotency": "0.1.0",
-    "kumwe/record-model": "dev-main || dev-fix/stable-definition-dependency",
+    "kumwe/record-model": "0.1.0",
     "kumwe/record-query": "dev-main || dev-fix/stable-definition-dependency",
     "kumwe/record-values": "0.1.0",
     "kumwe/business-definition": "0.1.0",
@@ -91,7 +91,7 @@
       "url": "https://github.com/kumwe/idempotency"
     },
     {
-      "type": "git",
+      "type": "vcs",
       "url": "https://github.com/kumwe/record-model"
     },
     {

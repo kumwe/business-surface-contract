@@ -1,10 +1,9 @@
 {
   "schema": "kumwe-release-readiness/v1",
   "status": "awaiting-stable-dependencies",
-  "reason": "No release record is selected until Record Model and Record Query have published stable versions. Idempotency and Record Values are pinned to published stable releases. Shared publication tooling is implemented; independent attestations are not publication prerequisites.",
+  "reason": "No release record is selected until Record Query has a published stable version. Idempotency, Record Values and Record Model are pinned to published stable releases. Shared publication tooling is implemented; independent attestations are not publication prerequisites.",
   "publishing_permitted": false,
   "pending_dependencies": [
-    "kumwe/record-model",
     "kumwe/record-query"
   ]
 }
