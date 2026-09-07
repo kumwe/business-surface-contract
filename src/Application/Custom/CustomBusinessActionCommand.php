@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Kumwe\BusinessSurface\Contract\Application\Custom;
 
-use Kumwe\Extension\Spi\Application\Automation\IdempotencyKey;
+use Kumwe\Idempotency\IdempotencyKey;
 use Kumwe\Context\Value\ExecutionContext;
-use Kumwe\Extension\Spi\BusinessRecord\Application\BusinessRecordRequestGuard;
+use Kumwe\Record\Model\BusinessRecordRequestGuard;
 
 /** Concurrency- and replay-aware command for one signed custom business action. @since 0.2.0 */
 final readonly class CustomBusinessActionCommand

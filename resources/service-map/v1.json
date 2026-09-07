@@ -1,0 +1,11 @@
+{
+  "schema": "kumwe-service-map/v1",
+  "package": "kumwe/business-surface-contract",
+  "mode": "direct",
+  "provider": null,
+  "factories": [],
+  "aliases": [],
+  "configuration": [],
+  "lifetimes": [],
+  "reason": "Values and contracts export no runtime service. FieldPresentationModel receives an explicit CanonicalEncoder only during construction, validates bounded input, and retains no encoder or container."
+}

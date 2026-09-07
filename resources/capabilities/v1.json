@@ -1,0 +1,21 @@
+{
+  "schema": "kumwe-package-capabilities/v1",
+  "package": "kumwe/business-surface-contract",
+  "namespace": "Kumwe\\BusinessSurface\\Contract\\",
+  "responsibility": "Portable custom business action, view and field presentation contracts.",
+  "non_responsibilities": [
+    "host authorization",
+    "persistence adapters",
+    "active registries",
+    "HTTP routing",
+    "template rendering",
+    "transactions"
+  ],
+  "capabilities": [
+    {
+      "id": "business-surface-contract",
+      "description": "Portable custom business action, view and field presentation contracts."
+    }
+  ],
+  "completion_claim": false
+}

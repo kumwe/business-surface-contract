@@ -4,125 +4,417 @@
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessActionCommand",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionCommand",
     "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessActionCommand.php",
-    "target_path": "src/Application/Custom/CustomBusinessActionCommand.php"
+    "target_path": "src/Application/Custom/CustomBusinessActionCommand.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "a9e645e6947d62849090ef257ec61477fc662ed7573f9497652f4c3a76fd7195",
+    "kind": "class",
+    "public_methods": [
+      "__construct"
+    ],
+    "public_properties": [
+      "context",
+      "definitionIdentifier",
+      "recordId",
+      "expectedVersion",
+      "action",
+      "idempotencyKey",
+      "input",
+      "organizationIdentifier",
+      "approvalRequestId"
+    ],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessActionDeclaration",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionDeclaration",
     "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessActionDeclaration.php",
-    "target_path": "src/Application/Custom/CustomBusinessActionDeclaration.php"
+    "target_path": "src/Application/Custom/CustomBusinessActionDeclaration.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "bca42b6f43f6f3ac839339378ab532ce8624a5f08e07f2bd689680305ac5bb1f",
+    "kind": "class",
+    "public_methods": [
+      "fromManifest",
+      "toArray"
+    ],
+    "public_properties": [
+      "handler",
+      "schema",
+      "commandSchema",
+      "resultSchema"
+    ],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessActionHandler",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionHandler",
     "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessActionHandler.php",
-    "target_path": "src/Application/Custom/CustomBusinessActionHandler.php"
+    "target_path": "src/Application/Custom/CustomBusinessActionHandler.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "7377b5e765efd9462e1d2ab5e1e308bcc5be8ee8352cacf29e199df2939b0c46",
+    "kind": "interface",
+    "public_methods": [
+      "handle"
+    ],
+    "public_properties": [],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessActionResult",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionResult",
     "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessActionResult.php",
-    "target_path": "src/Application/Custom/CustomBusinessActionResult.php"
+    "target_path": "src/Application/Custom/CustomBusinessActionResult.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "60a5f3fd62e910dbd24fee60321a58c308bfad3fbb67ce52711a7bfe4f676bef",
+    "kind": "class",
+    "public_methods": [
+      "__construct"
+    ],
+    "public_properties": [
+      "data",
+      "recordVersion",
+      "operationId",
+      "replayed",
+      "workflowState",
+      "deleted"
+    ],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessPayload",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessPayload",
     "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessPayload.php",
-    "target_path": "src/Application/Custom/CustomBusinessPayload.php"
+    "target_path": "src/Application/Custom/CustomBusinessPayload.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "53d0c02702f53598ca89da9574761397be29677cf2abc9354b7ee51ce9b568d2",
+    "kind": "class",
+    "public_methods": [
+      "assertObject"
+    ],
+    "public_properties": [],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessReference",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessReference",
     "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessReference.php",
-    "target_path": "src/Application/Custom/CustomBusinessReference.php"
+    "target_path": "src/Application/Custom/CustomBusinessReference.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "9e1bddbf1bc8307cc175b0545067f5b64e969fc0153f14c7179a6c727e946b6e",
+    "kind": "class",
+    "public_methods": [
+      "assert"
+    ],
+    "public_properties": [],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessSchema",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessSchema",
     "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessSchema.php",
-    "target_path": "src/Application/Custom/CustomBusinessSchema.php"
+    "target_path": "src/Application/Custom/CustomBusinessSchema.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "05627136b56f6f38cc1ced9dd31ad5fe5a918f8607110089842c407e5293b6a3",
+    "kind": "class",
+    "public_methods": [
+      "__construct",
+      "fromArray",
+      "toArray",
+      "assertValid"
+    ],
+    "public_properties": [],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessViewDeclaration",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewDeclaration",
     "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessViewDeclaration.php",
-    "target_path": "src/Application/Custom/CustomBusinessViewDeclaration.php"
+    "target_path": "src/Application/Custom/CustomBusinessViewDeclaration.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "6f0e80b21b0e8c0e24eeca38699db581923f06896aeb01c7f6557d53c607c65f",
+    "kind": "class",
+    "public_methods": [
+      "fromManifest",
+      "toArray"
+    ],
+    "public_properties": [
+      "handler",
+      "schema",
+      "querySchema",
+      "resultSchema"
+    ],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessViewHandler",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewHandler",
     "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessViewHandler.php",
-    "target_path": "src/Application/Custom/CustomBusinessViewHandler.php"
+    "target_path": "src/Application/Custom/CustomBusinessViewHandler.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "8614610e768db6d2128a0cdff53fec6a35c4f34aea82cd5d8894f992e5476883",
+    "kind": "interface",
+    "public_methods": [
+      "handle"
+    ],
+    "public_properties": [],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessViewQuery",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewQuery",
     "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessViewQuery.php",
-    "target_path": "src/Application/Custom/CustomBusinessViewQuery.php"
+    "target_path": "src/Application/Custom/CustomBusinessViewQuery.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "0f808bd489289ca0c6b91fa07da488320c6950faa4053ff835eed739a9c2d950",
+    "kind": "class",
+    "public_methods": [
+      "__construct"
+    ],
+    "public_properties": [
+      "context",
+      "definitionIdentifier",
+      "view",
+      "records",
+      "parameters",
+      "organizationIdentifier",
+      "recordId"
+    ],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessViewResult",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewResult",
     "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessViewResult.php",
-    "target_path": "src/Application/Custom/CustomBusinessViewResult.php"
+    "target_path": "src/Application/Custom/CustomBusinessViewResult.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "ddaaa09ef142ab2dab8ed7ed75fdbb2073e608e89c317cbeaa7c757b954f13a2",
+    "kind": "class",
+    "public_methods": [
+      "__construct"
+    ],
+    "public_properties": [
+      "data"
+    ],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Presentation\\Field\\FieldPresentationConfiguration",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationConfiguration",
     "source_path": "src/Spi/BusinessSurface/Presentation/Field/FieldPresentationConfiguration.php",
-    "target_path": "src/Presentation/Field/FieldPresentationConfiguration.php"
+    "target_path": "src/Presentation/Field/FieldPresentationConfiguration.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "e9f101b2c790aba1edeec5c13f5f6bad9c9be82249ea31d3385d064b0ee6dd98",
+    "kind": "class",
+    "public_methods": [
+      "fromArray",
+      "empty",
+      "get",
+      "toArray"
+    ],
+    "public_properties": [],
+    "public_constants": [
+      "MAXIMUM_KEYS",
+      "MAXIMUM_LIST_ITEMS",
+      "MAXIMUM_STRING_BYTES",
+      "MAXIMUM_BYTES"
+    ],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Presentation\\Field\\FieldPresentationContext",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContext",
     "source_path": "src/Spi/BusinessSurface/Presentation/Field/FieldPresentationContext.php",
-    "target_path": "src/Presentation/Field/FieldPresentationContext.php"
+    "target_path": "src/Presentation/Field/FieldPresentationContext.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "e98b0d9f83a346f67117db273b5f5ecf0e853267d3ca2f541c3fb0375b228253",
+    "kind": "enum",
+    "public_methods": [
+      "edits",
+      "cases",
+      "from",
+      "tryFrom"
+    ],
+    "public_properties": [
+      "name",
+      "value"
+    ],
+    "public_constants": [
+      "List",
+      "Detail",
+      "Create",
+      "Update",
+      "Filter",
+      "Relation",
+      "History"
+    ],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Presentation\\Field\\FieldPresentationContribution",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContribution",
     "source_path": "src/Spi/BusinessSurface/Presentation/Field/FieldPresentationContribution.php",
-    "target_path": "src/Presentation/Field/FieldPresentationContribution.php"
+    "target_path": "src/Presentation/Field/FieldPresentationContribution.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "081850ab34da86da94cb9f20dfcf0ff4a034cf3240fb09ddf5e409b2137d0db4",
+    "kind": "class",
+    "public_methods": [
+      "__construct",
+      "fromArray",
+      "identifier",
+      "toArray"
+    ],
+    "public_properties": [
+      "contexts",
+      "fieldType"
+    ],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Presentation\\Field\\FieldPresentationInput",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationInput",
     "source_path": "src/Spi/BusinessSurface/Presentation/Field/FieldPresentationInput.php",
-    "target_path": "src/Presentation/Field/FieldPresentationInput.php"
+    "target_path": "src/Presentation/Field/FieldPresentationInput.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "bddddda25b4cd4b268665060b9dedf3fed1c6b5625e23491bbaab091ec838da2",
+    "kind": "class",
+    "public_methods": [
+      "__construct",
+      "permitsEditing"
+    ],
+    "public_properties": [
+      "configuration",
+      "handle",
+      "label",
+      "fieldType",
+      "required",
+      "readOnly",
+      "computed",
+      "serverOnly",
+      "immutableAfterCreate",
+      "context",
+      "value",
+      "locale",
+      "errors",
+      "editable",
+      "length",
+      "precision",
+      "scale"
+    ],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Presentation\\Field\\FieldPresentationModel",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationModel",
     "source_path": "src/Spi/BusinessSurface/Presentation/Field/FieldPresentationModel.php",
-    "target_path": "src/Presentation/Field/FieldPresentationModel.php"
+    "target_path": "src/Presentation/Field/FieldPresentationModel.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "6ccf85c3d6b72eb932162576b7a268661dca1cc62bb03f21e3adfc42f3eaa6dd",
+    "kind": "class",
+    "public_methods": [
+      "__construct",
+      "toArray"
+    ],
+    "public_properties": [
+      "handle",
+      "label",
+      "context",
+      "widget",
+      "display",
+      "inputValue",
+      "editable",
+      "required",
+      "errors",
+      "options",
+      "attributes",
+      "provenance"
+    ],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Presentation\\Field\\FieldPresenter",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresenter",
     "source_path": "src/Spi/BusinessSurface/Presentation/Field/FieldPresenter.php",
-    "target_path": "src/Presentation/Field/FieldPresenter.php"
+    "target_path": "src/Presentation/Field/FieldPresenter.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "db29de557a82f75a56054fc1efe65da5ca81bada219f881431af468b7d8bb6ff",
+    "kind": "interface",
+    "public_methods": [
+      "present"
+    ],
+    "public_properties": [],
+    "public_constants": [],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   },
   {
     "repository": "https://github.com/kumwe/extension-sdk",
     "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Presentation\\Field\\FieldWidget",
     "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget",
     "source_path": "src/Spi/BusinessSurface/Presentation/Field/FieldWidget.php",
-    "target_path": "src/Presentation/Field/FieldWidget.php"
+    "target_path": "src/Presentation/Field/FieldWidget.php",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "source_sha256": "6fb5ece41652e438a2570791ebe767450da2a26e82fae9789100c2a402e87ba7",
+    "kind": "enum",
+    "public_methods": [
+      "cases",
+      "from",
+      "tryFrom"
+    ],
+    "public_properties": [
+      "name",
+      "value"
+    ],
+    "public_constants": [
+      "Output",
+      "Text",
+      "Textarea",
+      "Integer",
+      "Decimal",
+      "Checkbox",
+      "Select",
+      "Date",
+      "Time",
+      "DateTime",
+      "Email",
+      "Url",
+      "Phone",
+      "Money",
+      "Quantity",
+      "ZonedDateTime",
+      "MediaReference",
+      "EntityReference",
+      "Json",
+      "Collection",
+      "Secret"
+    ],
+    "compatibility": "namespace ownership move; see COMPATIBILITY.md"
   }
 ]

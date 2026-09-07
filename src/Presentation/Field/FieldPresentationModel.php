@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace Kumwe\BusinessSurface\Contract\Presentation\Field;
 
-
-
 use InvalidArgumentException;
-use Kumwe\Extension\Support\CanonicalJson;
+use Kumwe\CanonicalJson\CanonicalEncoder;
 use Kumwe\Conversion\Value\ConvertedMoneyValue;
 
 /**
@@ -16,6 +14,9 @@ use Kumwe\Conversion\Value\ConvertedMoneyValue;
  * A strategy cannot return markup or a Twig path. It chooses one core-owned semantic widget and supplies
  * bounded data which Twig auto-escapes, keeping extension renderers useful without making them an HTML or
  * template-inclusion escape hatch.
+ *
+ * Retained input is limited to 100000 value nodes, 32 levels, 512 entries per collection
+ * and one mebibyte of canonical bytes. The node cap is the initial BSC-002 compatibility decision.
  *
  * A converted amount is the one value whose display text is not the presenter's to compose. When
  * `$provenance` is present this model refuses any display but the self-describing portable form of the
@@ -46,6 +47,7 @@ final readonly class FieldPresentationModel
      * @param   mixed                                      $inputValue  Typed retained input; always null for secrets.
      * @param   bool                                       $editable    Whether an editor may be enabled.
      * @param   bool                                       $required    Whether empty input is invalid.
+     * @param   CanonicalEncoder $canonicalEncoder Explicit byte encoder supplied by the host.
      * @param   list<string>                               $errors      Field-level caller-visible errors.
      * @param   list<array{value: string, label: string}>  $options     Closed choice options.
      * @param   array<string, int|string|bool>             $attributes  Allow-listed bounds for the core widget.
@@ -69,6 +71,7 @@ final readonly class FieldPresentationModel
         public mixed $inputValue,
         public bool $editable,
         public bool $required,
+        CanonicalEncoder $canonicalEncoder,
         public array $errors = [],
         public array $options = [],
         public array $attributes = [],
@@ -113,12 +116,13 @@ final readonly class FieldPresentationModel
                 throw new InvalidArgumentException('A field presentation contains an invalid widget attribute.');
             }
         }
-        if (strlen(CanonicalJson::encode($attributes)) > 4096) {
+        if (strlen($canonicalEncoder->encode($attributes)) > 4096) {
             throw new InvalidArgumentException('Field-presentation widget attributes exceed four kibibytes.');
         }
         $inputBytes = 0;
-        self::measureInputBytes($inputValue, $inputBytes);
-        if (strlen(CanonicalJson::encode($inputValue)) > self::MAX_INPUT_BYTES) {
+        $inputNodes = 0;
+        self::measureInputBytes($inputValue, $inputBytes, $inputNodes);
+        if (strlen($canonicalEncoder->encode($inputValue)) > self::MAX_INPUT_BYTES) {
             throw new InvalidArgumentException('A field presentation input exceeds one mebibyte.');
         }
         if ($provenance !== null) {
@@ -178,6 +182,7 @@ final readonly class FieldPresentationModel
      *
      * @param   mixed  $value  Presenter-retained input node being measured.
      * @param   int    $bytes  Running lower-bound byte count, updated in place.
+     * @param   int    $nodes  Running node count, bounded by the generic canonical profile.
      * @param   int    $depth  Current array nesting depth.
      *
      * @return  void
@@ -186,8 +191,16 @@ final readonly class FieldPresentationModel
      *
      * @since   0.2.0
      */
-    private static function measureInputBytes(mixed $value, int &$bytes, int $depth = 0): void
+    private static function measureInputBytes(mixed $value, int &$bytes, int &$nodes, int $depth = 0): void
     {
+        if (++$nodes > 100_000) {
+            throw new InvalidArgumentException('A field presentation input exceeds 100000 nodes.');
+        }
+        if (is_float($value) || is_resource($value) || is_object($value)) {
+            throw new InvalidArgumentException(
+                'Canonical JSON values cannot contain floats, resources, or objects.',
+            );
+        }
         if ($depth > 32) {
             throw new InvalidArgumentException('A field presentation input is nested too deeply.');
         }
@@ -217,7 +230,7 @@ final readonly class FieldPresentationModel
                 if ($bytes > self::MAX_INPUT_BYTES) {
                     throw new InvalidArgumentException('A field presentation input exceeds one mebibyte.');
                 }
-                self::measureInputBytes($item, $bytes, $depth + 1);
+                self::measureInputBytes($item, $bytes, $nodes, $depth + 1);
             }
         }
         if ($bytes > self::MAX_INPUT_BYTES) {

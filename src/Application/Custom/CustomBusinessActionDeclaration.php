@@ -68,7 +68,10 @@ final readonly class CustomBusinessActionDeclaration
      */
     private static function keys(array $document, array $expected): void
     {
-        if (array_diff($expected, array_keys($document)) !== [] || array_diff(array_keys($document), $expected) !== []) {
+        if (
+            array_diff($expected, array_keys($document)) !== []
+            || array_diff(array_keys($document), $expected) !== []
+        ) {
             throw new InvalidArgumentException('A custom business action declaration must carry exactly its members.');
         }
     }

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Kumwe\BusinessSurface\Contract\Application\Custom;
 
-use Kumwe\Extension\Spi\Application\Automation\IdempotencyKey;
-use Kumwe\Extension\Spi\BusinessRecord\Application\BusinessRecordRequestGuard;
+use Kumwe\Idempotency\IdempotencyKey;
+use Kumwe\Record\Model\BusinessRecordRequestGuard;
 
 /** Bounded, versioned result returned by a custom business action. @since 0.2.0 */
 final readonly class CustomBusinessActionResult

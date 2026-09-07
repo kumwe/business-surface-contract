@@ -14,11 +14,13 @@ final class CustomBusinessPayload
      * Assert that one decoded payload is a JSON object inside the shared structural budget.
      *
      * @param   array<string, mixed>  $payload  Decoded custom business object whose shape, size and keys are checked.
-     * @param   string                $kind     Payload role (for example "view query" or "action input") named in failure messages.
+     * @param   string                $kind     Payload role (for example "view query" or "action input") named in
+     *     failure messages.
      *
      * @return  void
      *
-     * @throws  InvalidArgumentException  When the payload is not an object or breaches the depth, node, string or byte budget.
+     * @throws  InvalidArgumentException  When the payload is not an object or breaches the depth, node, string or
+     *     byte budget.
      *
      * @since   0.2.0
      */
