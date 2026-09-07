@@ -1,9 +1,7 @@
 {
   "schema": "kumwe-release-readiness/v1",
-  "status": "awaiting-stable-dependencies",
-  "reason": "No release record is selected until Record Query has a published stable version. Idempotency, Record Values and Record Model are pinned to published stable releases. Shared publication tooling is implemented; independent attestations are not publication prerequisites.",
-  "publishing_permitted": false,
-  "pending_dependencies": [
-    "kumwe/record-query"
-  ]
+  "status": "release-recorded",
+  "version": "0.1.0",
+  "reason": "All production dependencies use published stable versions. Human merge triggers the complete package gate and automatic publication. Independent verification and App adoption follow publication.",
+  "publishing_permitted": true
 }
