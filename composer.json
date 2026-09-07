@@ -14,9 +14,7 @@
     "kumwe/idempotency": "0.1.0",
     "kumwe/record-model": "0.1.0",
     "kumwe/record-query": "0.1.0",
-    "kumwe/record-values": "0.1.0",
-    "kumwe/business-definition": "0.1.0",
-    "kumwe/sequence": "0.2.0"
+    "kumwe/record-values": "0.1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^12.0",

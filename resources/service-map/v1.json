@@ -1,11 +1,11 @@
 {
-  "schema": "kumwe-service-map/v1",
-  "package": "kumwe/business-surface-contract",
-  "mode": "direct",
-  "provider": null,
-  "factories": [],
-  "aliases": [],
-  "configuration": [],
-  "lifetimes": [],
-  "reason": "Values and contracts export no runtime service. FieldPresentationModel receives an explicit CanonicalEncoder only during construction, validates bounded input, and retains no encoder or container."
+    "schema": "kumwe-package-service-map/v1",
+    "package": "kumwe/business-surface-contract",
+    "release": "0.1.1",
+    "config_provider": null,
+    "provider_absence_reason": "Values, pure algorithms and ports are constructed directly; no injected runtime coordinator or ambient container service is owned by this package.",
+    "factories": [],
+    "aliases": {},
+    "delegators": [],
+    "configuration_keys": []
 }

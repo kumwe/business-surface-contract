@@ -1,21 +1,49 @@
 {
-  "schema": "kumwe-package-capabilities/v1",
-  "package": "kumwe/business-surface-contract",
-  "namespace": "Kumwe\\BusinessSurface\\Contract\\",
-  "responsibility": "Portable custom business action, view and field presentation contracts.",
-  "non_responsibilities": [
-    "host authorization",
-    "persistence adapters",
-    "active registries",
-    "HTTP routing",
-    "template rendering",
-    "transactions"
-  ],
-  "capabilities": [
-    {
-      "id": "business-surface-contract",
-      "description": "Portable custom business action, view and field presentation contracts."
-    }
-  ],
-  "completion_claim": false
+    "schema": "kumwe-package-capabilities/v1",
+    "package": "kumwe/business-surface-contract",
+    "namespace": "Kumwe\\BusinessSurface\\Contract\\",
+    "responsibility": "Portable custom business action, view and field presentation contracts.",
+    "non_responsibilities": [
+        "host authorization",
+        "persistence adapters",
+        "active registries",
+        "HTTP routing",
+        "template rendering",
+        "transactions"
+    ],
+    "capabilities": [
+        {
+            "id": "business-surface-contract.portable-contract",
+            "description": "Portable custom business action, view and field presentation contracts.",
+            "title": "Business Surface Contract",
+            "symbols": [
+                "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionCommand",
+                "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionDeclaration",
+                "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionHandler",
+                "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionResult",
+                "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessPayload",
+                "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessReference",
+                "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessSchema",
+                "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewDeclaration",
+                "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewHandler",
+                "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewQuery",
+                "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewResult",
+                "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationConfiguration",
+                "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContext",
+                "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContribution",
+                "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationInput",
+                "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationModel",
+                "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresenter",
+                "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget"
+            ],
+            "documentation": [
+                "docs/public-api.md",
+                "docs/architecture.md",
+                "docs/readiness-review.md"
+            ]
+        }
+    ],
+    "release": "0.1.1",
+    "native_requirements": null,
+    "deprecations": []
 }

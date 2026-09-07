@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1] - 2026-09-07
+
+- Enforce secret-editor non-retention, read-context immutability, approved canonical field input types and detached input arrays. Reject mutable custom payload/presentation references and malformed error lists.
+- Verify API documentation, full method signatures, parameter defaults, properties and constant values against deterministic generated metadata.
+- Add package-owned regression and hostile-input tests; refresh the extraction handoff and dependency status.
+- This is a release candidate record. Publication follows human merge and the package gate; independent release verification and App integration are separate.
+
 ## [0.1.0] - 2026-09-07
 
 - Extract the canonical runtime types recorded in docs/source-map.json and their behavior tests.

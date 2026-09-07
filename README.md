@@ -11,3 +11,7 @@ The package has no ConfigProvider. Values are constructed directly; ports are su
 Released consumers exact-pin pre-1.0 versions. Apache-2.0; inherited source behavior is preserved except the explicitly documented bounded-input decisions.
 
 FieldPresentationModel takes an explicit CanonicalEncoder after the required flag. It preserves the SDK exact-value restrictions before calling the generic encoder. The encoder is not retained; App owns the implementation binding. See [dependency proposal](docs/dependency-decision.md) for the unverified candidates and original-ceiling amendment.
+
+## Current extraction review
+
+See [readiness review](docs/readiness-review.md) for the `0.1.1` candidate, current portable boundaries, package-owned regression coverage and the remaining publication/verification steps. [Dependency status](docs/dependency-decision.md) records the coherent exact release graph.
