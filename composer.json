@@ -10,12 +10,12 @@
     "kumwe/access-context": "0.1.0",
     "kumwe/contribution": "0.1.0",
     "kumwe/conversion": "0.1.0",
-    "kumwe/canonical-json": "dev-agent/canonical-encoder-port-v2",
+    "kumwe/canonical-json": "0.1.1",
     "kumwe/idempotency": "dev-main",
     "kumwe/record-model": "dev-main || dev-agent/merged-dependency-coordinates-v2",
     "kumwe/record-query": "dev-main || dev-agent/merged-dependency-coordinates-v2",
     "kumwe/record-values": "dev-main",
-    "kumwe/business-definition": "dev-main",
+    "kumwe/business-definition": "0.1.0",
     "kumwe/sequence": "dev-main"
   },
   "require-dev": {
