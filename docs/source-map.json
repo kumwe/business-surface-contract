@@ -1,0 +1,128 @@
+[
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessActionCommand",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionCommand",
+    "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessActionCommand.php",
+    "target_path": "src/Application/Custom/CustomBusinessActionCommand.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessActionDeclaration",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionDeclaration",
+    "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessActionDeclaration.php",
+    "target_path": "src/Application/Custom/CustomBusinessActionDeclaration.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessActionHandler",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionHandler",
+    "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessActionHandler.php",
+    "target_path": "src/Application/Custom/CustomBusinessActionHandler.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessActionResult",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionResult",
+    "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessActionResult.php",
+    "target_path": "src/Application/Custom/CustomBusinessActionResult.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessPayload",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessPayload",
+    "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessPayload.php",
+    "target_path": "src/Application/Custom/CustomBusinessPayload.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessReference",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessReference",
+    "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessReference.php",
+    "target_path": "src/Application/Custom/CustomBusinessReference.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessSchema",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessSchema",
+    "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessSchema.php",
+    "target_path": "src/Application/Custom/CustomBusinessSchema.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessViewDeclaration",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewDeclaration",
+    "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessViewDeclaration.php",
+    "target_path": "src/Application/Custom/CustomBusinessViewDeclaration.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessViewHandler",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewHandler",
+    "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessViewHandler.php",
+    "target_path": "src/Application/Custom/CustomBusinessViewHandler.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessViewQuery",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewQuery",
+    "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessViewQuery.php",
+    "target_path": "src/Application/Custom/CustomBusinessViewQuery.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessViewResult",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewResult",
+    "source_path": "src/Spi/BusinessSurface/Application/Custom/CustomBusinessViewResult.php",
+    "target_path": "src/Application/Custom/CustomBusinessViewResult.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Presentation\\Field\\FieldPresentationConfiguration",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationConfiguration",
+    "source_path": "src/Spi/BusinessSurface/Presentation/Field/FieldPresentationConfiguration.php",
+    "target_path": "src/Presentation/Field/FieldPresentationConfiguration.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Presentation\\Field\\FieldPresentationContext",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContext",
+    "source_path": "src/Spi/BusinessSurface/Presentation/Field/FieldPresentationContext.php",
+    "target_path": "src/Presentation/Field/FieldPresentationContext.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Presentation\\Field\\FieldPresentationContribution",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContribution",
+    "source_path": "src/Spi/BusinessSurface/Presentation/Field/FieldPresentationContribution.php",
+    "target_path": "src/Presentation/Field/FieldPresentationContribution.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Presentation\\Field\\FieldPresentationInput",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationInput",
+    "source_path": "src/Spi/BusinessSurface/Presentation/Field/FieldPresentationInput.php",
+    "target_path": "src/Presentation/Field/FieldPresentationInput.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Presentation\\Field\\FieldPresentationModel",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationModel",
+    "source_path": "src/Spi/BusinessSurface/Presentation/Field/FieldPresentationModel.php",
+    "target_path": "src/Presentation/Field/FieldPresentationModel.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Presentation\\Field\\FieldPresenter",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresenter",
+    "source_path": "src/Spi/BusinessSurface/Presentation/Field/FieldPresenter.php",
+    "target_path": "src/Presentation/Field/FieldPresenter.php"
+  },
+  {
+    "repository": "https://github.com/kumwe/extension-sdk",
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessSurface\\Presentation\\Field\\FieldWidget",
+    "new_fqcn": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget",
+    "source_path": "src/Spi/BusinessSurface/Presentation/Field/FieldWidget.php",
+    "target_path": "src/Presentation/Field/FieldWidget.php"
+  }
+]
