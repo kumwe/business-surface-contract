@@ -11,10 +11,10 @@
     "kumwe/contribution": "0.1.0",
     "kumwe/conversion": "0.1.0",
     "kumwe/canonical-json": "0.1.1",
-    "kumwe/idempotency": "dev-main || dev-fix/normal-recorded-publication",
+    "kumwe/idempotency": "0.1.0",
     "kumwe/record-model": "dev-main || dev-fix/stable-definition-dependency",
     "kumwe/record-query": "dev-main || dev-fix/stable-definition-dependency",
-    "kumwe/record-values": "dev-main",
+    "kumwe/record-values": "0.1.0",
     "kumwe/business-definition": "0.1.0",
     "kumwe/sequence": "0.2.0"
   },
@@ -87,7 +87,7 @@
       "url": "https://github.com/kumwe/canonical-json"
     },
     {
-      "type": "git",
+      "type": "vcs",
       "url": "https://github.com/kumwe/idempotency"
     },
     {
@@ -99,7 +99,7 @@
       "url": "https://github.com/kumwe/record-query"
     },
     {
-      "type": "git",
+      "type": "vcs",
       "url": "https://github.com/kumwe/record-values"
     },
     {
