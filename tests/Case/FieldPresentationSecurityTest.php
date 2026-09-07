@@ -323,7 +323,7 @@ final class FieldPresentationSecurityTest extends TestCase
         return new FieldPresentationModel(
             'name',
             'Name',
-            FieldPresentationContext::Detail,
+            $editable ? FieldPresentationContext::Create : FieldPresentationContext::Detail,
             $widget,
             $display,
             $inputValue,

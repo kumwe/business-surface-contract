@@ -6,6 +6,7 @@ namespace Kumwe\BusinessSurface\Contract\Application\Custom;
 
 use InvalidArgumentException;
 use JsonException;
+use ReflectionReference;
 
 /** Structural budget shared by custom business inputs and outputs. @since 0.2.0 */
 final class CustomBusinessPayload
@@ -97,6 +98,9 @@ final class CustomBusinessPayload
             ));
         }
         foreach ($value as $key => $item) {
+            if (ReflectionReference::fromArrayElement($value, $key) !== null) {
+                throw new InvalidArgumentException('Custom business payloads cannot retain mutable PHP references.');
+            }
             if (!$list && (!is_string($key) || preg_match('/^[a-z][a-z0-9_]{0,62}$/D', $key) !== 1)) {
                 throw new InvalidArgumentException(sprintf(
                     'A custom business %s contains an unsafe property name.',

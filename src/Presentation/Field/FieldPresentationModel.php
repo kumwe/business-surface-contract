@@ -7,6 +7,7 @@ namespace Kumwe\BusinessSurface\Contract\Presentation\Field;
 use InvalidArgumentException;
 use Kumwe\CanonicalJson\CanonicalEncoder;
 use Kumwe\Conversion\Value\ConvertedMoneyValue;
+use ReflectionReference;
 
 /**
  * Escaped-view-model request returned by core or extension field strategies.
@@ -80,6 +81,8 @@ final readonly class FieldPresentationModel
         if (
             preg_match('/^[a-z][a-z0-9_]{0,62}$/D', $handle) !== 1
             || $label === '' || strlen($label) > 120 || strlen($display) > 65_536
+            || !array_is_list($errors) || !array_is_list($options)
+            || !mb_check_encoding($label, 'UTF-8') || !mb_check_encoding($display, 'UTF-8')
             || count($errors) > 32 || count($options) > 256 || count($attributes) > 16
         ) {
             throw new InvalidArgumentException('A field presentation is malformed or unbounded.');
@@ -87,8 +90,17 @@ final readonly class FieldPresentationModel
         if (
             ($editable && $widget === FieldWidget::Output)
             || (!$editable && $widget !== FieldWidget::Output)
+            || ($editable && !$context->edits())
         ) {
             throw new InvalidArgumentException('A field presentation has an inconsistent editor state.');
+        }
+        if ($widget === FieldWidget::Secret && $inputValue !== null) {
+            throw new InvalidArgumentException('A secret editor must never retain its input value.');
+        }
+        foreach ([$errors, $options, $attributes, $provenance ?? []] as $collection) {
+            $metadataBytes = 0;
+            $metadataNodes = 0;
+            self::measureInputBytes($collection, $metadataBytes, $metadataNodes);
         }
         foreach ($errors as $error) {
             if (!is_string($error) || $error === '' || strlen($error) > 1000) {
@@ -220,6 +232,9 @@ final readonly class FieldPresentationModel
             $list = array_is_list($value);
             $first = true;
             foreach ($value as $key => $item) {
+                if (ReflectionReference::fromArrayElement($value, $key) !== null) {
+                    throw new InvalidArgumentException('A field presentation cannot retain mutable PHP references.');
+                }
                 if (!$first) {
                     $bytes++;
                 }

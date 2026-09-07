@@ -1,0 +1,1421 @@
+{
+    "schema": "kumwe-public-api-details/v1",
+    "package": "kumwe/business-surface-contract",
+    "release": "0.1.1",
+    "namespace": "Kumwe\\BusinessSurface\\Contract\\",
+    "symbols": [
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionCommand",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "context",
+                            "type": "Kumwe\\Context\\Value\\ExecutionContext",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "definitionIdentifier",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "recordId",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "expectedVersion",
+                            "type": "int",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "action",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "idempotencyKey",
+                            "type": "Kumwe\\Idempotency\\IdempotencyKey",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "input",
+                            "type": "array",
+                            "optional": true,
+                            "default": "array (\n)",
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "organizationIdentifier",
+                            "type": "?string",
+                            "optional": true,
+                            "default": "NULL",
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "approvalRequestId",
+                            "type": "?string",
+                            "optional": true,
+                            "default": "NULL",
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [
+                {
+                    "name": "context",
+                    "type": "Kumwe\\Context\\Value\\ExecutionContext",
+                    "readonly": true
+                },
+                {
+                    "name": "definitionIdentifier",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "recordId",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "expectedVersion",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "action",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "idempotencyKey",
+                    "type": "Kumwe\\Idempotency\\IdempotencyKey",
+                    "readonly": true
+                },
+                {
+                    "name": "input",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "organizationIdentifier",
+                    "type": "?string",
+                    "readonly": true
+                },
+                {
+                    "name": "approvalRequestId",
+                    "type": "?string",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionDeclaration",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "fromManifest",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "document",
+                            "type": "array",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionDeclaration"
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "handler",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "schema",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "commandSchema",
+                    "type": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessSchema",
+                    "readonly": true
+                },
+                {
+                    "name": "resultSchema",
+                    "type": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessSchema",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionHandler",
+            "kind": "interface",
+            "methods": [
+                {
+                    "name": "handle",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "command",
+                            "type": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionCommand",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionResult"
+                }
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionResult",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "recordVersion",
+                            "type": "int",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "operationId",
+                            "type": "Kumwe\\Idempotency\\IdempotencyKey",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "replayed",
+                            "type": "bool",
+                            "optional": true,
+                            "default": "false",
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "workflowState",
+                            "type": "?string",
+                            "optional": true,
+                            "default": "NULL",
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "deleted",
+                            "type": "bool",
+                            "optional": true,
+                            "default": "false",
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [
+                {
+                    "name": "data",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "recordVersion",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "operationId",
+                    "type": "Kumwe\\Idempotency\\IdempotencyKey",
+                    "readonly": true
+                },
+                {
+                    "name": "replayed",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "workflowState",
+                    "type": "?string",
+                    "readonly": true
+                },
+                {
+                    "name": "deleted",
+                    "type": "bool",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessPayload",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "assertObject",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "payload",
+                            "type": "array",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "kind",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                }
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessReference",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "assert",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "reference",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "kind",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                }
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessSchema",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "schema",
+                            "type": "array",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "fromArray",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "schema",
+                            "type": "mixed",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessSchema"
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "assertValid",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "payload",
+                            "type": "array",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "kind",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                }
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewDeclaration",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "fromManifest",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "document",
+                            "type": "array",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewDeclaration"
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "handler",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "schema",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "querySchema",
+                    "type": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessSchema",
+                    "readonly": true
+                },
+                {
+                    "name": "resultSchema",
+                    "type": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessSchema",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewHandler",
+            "kind": "interface",
+            "methods": [
+                {
+                    "name": "handle",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "query",
+                            "type": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewQuery",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewResult"
+                }
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewQuery",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "context",
+                            "type": "Kumwe\\Context\\Value\\ExecutionContext",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "definitionIdentifier",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "view",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "records",
+                            "type": "Kumwe\\Record\\Query\\RecordQuerySpecification",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "parameters",
+                            "type": "array",
+                            "optional": true,
+                            "default": "array (\n)",
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "organizationIdentifier",
+                            "type": "?string",
+                            "optional": true,
+                            "default": "NULL",
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "recordId",
+                            "type": "?string",
+                            "optional": true,
+                            "default": "NULL",
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [
+                {
+                    "name": "context",
+                    "type": "Kumwe\\Context\\Value\\ExecutionContext",
+                    "readonly": true
+                },
+                {
+                    "name": "definitionIdentifier",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "view",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "records",
+                    "type": "Kumwe\\Record\\Query\\RecordQuerySpecification",
+                    "readonly": true
+                },
+                {
+                    "name": "parameters",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "organizationIdentifier",
+                    "type": "?string",
+                    "readonly": true
+                },
+                {
+                    "name": "recordId",
+                    "type": "?string",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessViewResult",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [
+                {
+                    "name": "data",
+                    "type": "array",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationConfiguration",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "fromArray",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "values",
+                            "type": "array",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationConfiguration"
+                },
+                {
+                    "name": "empty",
+                    "static": true,
+                    "parameters": [],
+                    "return": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationConfiguration"
+                },
+                {
+                    "name": "get",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array|string|int|bool|null"
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [],
+            "constants": [
+                "MAXIMUM_KEYS",
+                "MAXIMUM_LIST_ITEMS",
+                "MAXIMUM_STRING_BYTES",
+                "MAXIMUM_BYTES"
+            ],
+            "constant_values": {
+                "MAXIMUM_KEYS": "64",
+                "MAXIMUM_LIST_ITEMS": "256",
+                "MAXIMUM_STRING_BYTES": "4096",
+                "MAXIMUM_BYTES": "32768"
+            }
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContext",
+            "kind": "enum",
+            "methods": [
+                {
+                    "name": "edits",
+                    "static": false,
+                    "parameters": [],
+                    "return": "bool"
+                },
+                {
+                    "name": "cases",
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "from",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                {
+                    "name": "tryFrom",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": [
+                "List",
+                "Detail",
+                "Create",
+                "Update",
+                "Filter",
+                "Relation",
+                "History"
+            ],
+            "constant_values": {
+                "List": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContext::List",
+                "Detail": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContext::Detail",
+                "Create": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContext::Create",
+                "Update": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContext::Update",
+                "Filter": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContext::Filter",
+                "Relation": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContext::Relation",
+                "History": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContext::History"
+            }
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContribution",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "fieldType",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "contexts",
+                            "type": "array",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "fromArray",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "document",
+                            "type": "array",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContribution"
+                },
+                {
+                    "name": "identifier",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "contexts",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "fieldType",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationInput",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "handle",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "label",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "fieldType",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "required",
+                            "type": "bool",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "readOnly",
+                            "type": "bool",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "computed",
+                            "type": "bool",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "serverOnly",
+                            "type": "bool",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "immutableAfterCreate",
+                            "type": "bool",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "context",
+                            "type": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContext",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "value",
+                            "type": "mixed",
+                            "optional": true,
+                            "default": "NULL",
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "locale",
+                            "type": "string",
+                            "optional": true,
+                            "default": "'en'",
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "errors",
+                            "type": "array",
+                            "optional": true,
+                            "default": "array (\n)",
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "editable",
+                            "type": "bool",
+                            "optional": true,
+                            "default": "false",
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "length",
+                            "type": "?int",
+                            "optional": true,
+                            "default": "NULL",
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "precision",
+                            "type": "?int",
+                            "optional": true,
+                            "default": "NULL",
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "scale",
+                            "type": "?int",
+                            "optional": true,
+                            "default": "NULL",
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "configuration",
+                            "type": "?Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationConfiguration",
+                            "optional": true,
+                            "default": "NULL",
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "permitsEditing",
+                    "static": false,
+                    "parameters": [],
+                    "return": "bool"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "value",
+                    "type": "mixed",
+                    "readonly": true
+                },
+                {
+                    "name": "configuration",
+                    "type": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationConfiguration",
+                    "readonly": true
+                },
+                {
+                    "name": "handle",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "label",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "fieldType",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "required",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "readOnly",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "computed",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "serverOnly",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "immutableAfterCreate",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "context",
+                    "type": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContext",
+                    "readonly": true
+                },
+                {
+                    "name": "locale",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "errors",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "editable",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "length",
+                    "type": "?int",
+                    "readonly": true
+                },
+                {
+                    "name": "precision",
+                    "type": "?int",
+                    "readonly": true
+                },
+                {
+                    "name": "scale",
+                    "type": "?int",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationModel",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "handle",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "label",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "context",
+                            "type": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContext",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "widget",
+                            "type": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "display",
+                            "type": "string",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "inputValue",
+                            "type": "mixed",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "editable",
+                            "type": "bool",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "required",
+                            "type": "bool",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "canonicalEncoder",
+                            "type": "Kumwe\\CanonicalJson\\CanonicalEncoder",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "errors",
+                            "type": "array",
+                            "optional": true,
+                            "default": "array (\n)",
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "options",
+                            "type": "array",
+                            "optional": true,
+                            "default": "array (\n)",
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "attributes",
+                            "type": "array",
+                            "optional": true,
+                            "default": "array (\n)",
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "provenance",
+                            "type": "?array",
+                            "optional": true,
+                            "default": "NULL",
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "handle",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "label",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "context",
+                    "type": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationContext",
+                    "readonly": true
+                },
+                {
+                    "name": "widget",
+                    "type": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget",
+                    "readonly": true
+                },
+                {
+                    "name": "display",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "inputValue",
+                    "type": "mixed",
+                    "readonly": true
+                },
+                {
+                    "name": "editable",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "required",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "errors",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "options",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "attributes",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "provenance",
+                    "type": "?array",
+                    "readonly": true
+                }
+            ],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresenter",
+            "kind": "interface",
+            "methods": [
+                {
+                    "name": "present",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "input",
+                            "type": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationInput",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldPresentationModel"
+                }
+            ],
+            "properties": [],
+            "constants": [],
+            "constant_values": []
+        },
+        {
+            "name": "Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget",
+            "kind": "enum",
+            "methods": [
+                {
+                    "name": "cases",
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "from",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                {
+                    "name": "tryFrom",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "default": null,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": [
+                "Output",
+                "Text",
+                "Textarea",
+                "Integer",
+                "Decimal",
+                "Checkbox",
+                "Select",
+                "Date",
+                "Time",
+                "DateTime",
+                "Email",
+                "Url",
+                "Phone",
+                "Money",
+                "Quantity",
+                "ZonedDateTime",
+                "MediaReference",
+                "EntityReference",
+                "Json",
+                "Collection",
+                "Secret"
+            ],
+            "constant_values": {
+                "Output": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Output",
+                "Text": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Text",
+                "Textarea": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Textarea",
+                "Integer": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Integer",
+                "Decimal": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Decimal",
+                "Checkbox": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Checkbox",
+                "Select": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Select",
+                "Date": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Date",
+                "Time": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Time",
+                "DateTime": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::DateTime",
+                "Email": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Email",
+                "Url": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Url",
+                "Phone": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Phone",
+                "Money": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Money",
+                "Quantity": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Quantity",
+                "ZonedDateTime": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::ZonedDateTime",
+                "MediaReference": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::MediaReference",
+                "EntityReference": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::EntityReference",
+                "Json": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Json",
+                "Collection": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Collection",
+                "Secret": "\\Kumwe\\BusinessSurface\\Contract\\Presentation\\Field\\FieldWidget::Secret"
+            }
+        }
+    ]
+}
