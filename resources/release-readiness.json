@@ -1,6 +1,12 @@
 {
   "schema": "kumwe-release-readiness/v1",
-  "status": "blocked",
-  "reason": "Implementation review and published stable dependency versions are pending; independent attestations are optional separate evidence.",
-  "publishing_permitted": false
+  "status": "awaiting-stable-dependencies",
+  "reason": "No release record is selected until Idempotency, Record Values, Record Model and Record Query have published stable versions. Shared publication tooling is implemented; independent attestations are not publication prerequisites.",
+  "publishing_permitted": false,
+  "pending_dependencies": [
+    "kumwe/idempotency",
+    "kumwe/record-values",
+    "kumwe/record-model",
+    "kumwe/record-query"
+  ]
 }
