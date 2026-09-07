@@ -11,12 +11,12 @@
     "kumwe/contribution": "0.1.0",
     "kumwe/conversion": "0.1.0",
     "kumwe/canonical-json": "0.1.1",
-    "kumwe/idempotency": "dev-main",
-    "kumwe/record-model": "dev-main || dev-agent/merged-dependency-coordinates-v2",
-    "kumwe/record-query": "dev-main || dev-agent/merged-dependency-coordinates-v2",
+    "kumwe/idempotency": "dev-main || dev-fix/normal-recorded-publication",
+    "kumwe/record-model": "dev-main || dev-fix/stable-definition-dependency",
+    "kumwe/record-query": "dev-main || dev-fix/stable-definition-dependency",
     "kumwe/record-values": "dev-main",
     "kumwe/business-definition": "0.1.0",
-    "kumwe/sequence": "dev-main"
+    "kumwe/sequence": "0.2.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^12.0",
@@ -83,7 +83,7 @@
   "prefer-stable": true,
   "repositories": [
     {
-      "type": "git",
+      "type": "vcs",
       "url": "https://github.com/kumwe/canonical-json"
     },
     {
@@ -103,11 +103,11 @@
       "url": "https://github.com/kumwe/record-values"
     },
     {
-      "type": "git",
+      "type": "vcs",
       "url": "https://github.com/kumwe/business-definition.git"
     },
     {
-      "type": "git",
+      "type": "vcs",
       "url": "https://github.com/kumwe/sequence.git"
     }
   ]

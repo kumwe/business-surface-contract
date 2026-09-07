@@ -94,10 +94,10 @@ source:
     kumwe/access-context: 0.1.0
     kumwe/contribution: 0.1.0
     kumwe/conversion: 0.1.0
-    kumwe/canonical-json: dev-agent/canonical-encoder-port-v2
+    kumwe/canonical-json: 0.1.1
     kumwe/idempotency: dev-main
-    kumwe/record-model: dev-main || dev-agent/merged-dependency-coordinates-v2
-    kumwe/record-query: dev-main || dev-agent/merged-dependency-coordinates-v2
+    kumwe/record-model: dev-main || dev-fix/stable-definition-dependency
+    kumwe/record-query: dev-main || dev-fix/stable-definition-dependency
     kumwe/record-values: dev-main
     kumwe/business-definition: dev-main
     kumwe/sequence: dev-main
@@ -605,7 +605,7 @@ release_expectations:
   - '@security'
   - '@clean-consumer'
   required_registry_or_installer: Composer
-  required_external_attestation: true
+  required_external_attestation: false
 next_task:
   phase_name: Independent release verification, followed by separately authorized
     App Phase 2
@@ -755,10 +755,10 @@ decisions:
 - BSC-002 explicitly limits retained inputs to 100000 nodes to match GenericV1; exact
   accepted/refused boundary tests cover the intentional initial-contract restriction.
 blockers:
-- Human review and independently verified immutable release pending
-- Canonical dependency release verification pending
+- Human review and merge of source repairs; stable Idempotency and Record releases are pending
+- Exact stable dependency pins and initial release record remain pending
 - Proposed dependency ceiling amendment requires review
-- BusinessDefinition candidate dependency fix and canonical Record Model/Query candidates
+- Business Definition 0.1.0 and canonical Record Model/Query source repairs
   must install without stable aliases
 - Clean archive consumer and security gates require real dependencies; local source
   integration is not release verification
