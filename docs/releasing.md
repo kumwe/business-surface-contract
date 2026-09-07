@@ -1,8 +1,8 @@
 # Releasing
 
 The newest stable heading in CHANGELOG.md records the release version. This package
-has no recorded version while Record Model and Record Query are unreleased.
-Idempotency and Record Values use their published 0.1.0 versions. Maintainers review
+has no recorded version while Record Query is unreleased.
+Idempotency, Record Values and Record Model use their published 0.1.0 versions. Maintainers review
 and rebase-merge the release PR into the default branch. No manual setup command is required.
 
 The release workflow reuses the complete package CI at the actual post-rebase
@@ -36,6 +36,6 @@ Run bash tools/test-package-dependencies.sh when changing that verifier.
 The Unreleased-only changelog makes the publisher finish successfully without
 creating a tag or release. Production dependency verification only runs when a
 version is recorded. Before recording the first stable version, select exact
-published stable Record Model and Record Query versions;
+a published stable Record Query version;
 the dependency verifier refuses source branches. Current source repair branches
 are tested package inputs, not stable release evidence.
