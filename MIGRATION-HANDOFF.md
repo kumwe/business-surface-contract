@@ -121,7 +121,7 @@ target:
   artifact_identity: "kumwe/business-surface-contract"
   canonical_namespace_or_abi: "Kumwe\\BusinessSurface\\Contract\\"
   branch: "fix/final-governed-dependencies"
-  pull_request: "https://github.com/kumwe/business-surface-contract/pull/7"
+  pull_request: "https://github.com/kumwe/business-surface-contract/pull/8"
 ownership:
   responsibility: "Portable custom business action, view and field presentation contracts."
   non_responsibilities:
