@@ -55,6 +55,7 @@ jobs:
           bash tools/test-release-integrity.sh
           bash tools/test-release-on-record.sh
           bash tools/test-package-dependencies.sh
+          bash tools/test-dependency-readiness.sh
 
   package-gate:
     name: Package gate

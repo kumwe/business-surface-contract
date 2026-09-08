@@ -142,16 +142,16 @@ ownership:
   public_manifests:
     -
       path: "resources/public-api/v1.json"
-      sha256: "0d72a8ff3705352ee3396aaafef8a2e9623c1c468ded713b86f289f97821a583"
+      sha256: "5bcb0cafe6e3a620c5d4a336c5d39f705a214cd202072f5a920a2b072375c23f"
     -
       path: "resources/capabilities/v1.json"
-      sha256: "7ea73208680442fc9ac4c59881fb280422ffb723850a37a15c56c031c74250f1"
+      sha256: "55c5bd0a780705a490f59066d7fb154f0b7bce2f40dab735a657bc22b110f195"
     -
       path: "resources/service-map/v1.json"
-      sha256: "51bf56efd241b4fa8bb8dce0732787ccdbe42fef440faecf7ae8fca9db7a3296"
+      sha256: "5580e28b2516cd343f5561c04e6086b6f0c611e76a0e06ca8b23afad56ee632a"
     -
       path: "resources/public-api/signature-details-v1.json"
-      sha256: "97ce502243fca9dc7c19cd4abbc06db45e3253fe12ba0a191a6492b81cfce2af"
+      sha256: "e93281879913066fd5455e465fc04e8507ac192a7737f14f890011a20d05f164"
   intentionally_excluded:
     - "SDK HTTP bindings and renderers remain host-owned"
 framework_php:
@@ -600,9 +600,9 @@ documentation:
   integration_or_consumer: "docs/integration.md"
   examples:
     - "examples/standalone.php"
-  changelog_record: "CHANGELOG.md#0.1.1"
+  changelog_record: "CHANGELOG.md#0.1.2"
 release_expectations:
-  version_policy: "SemVer; 0.1.1 candidate source release record, published baseline 0.1.0. Exact consumer pins follow independent artifact verification."
+  version_policy: "SemVer; 0.1.2 candidate source release record, published baseline 0.1.1. Exact consumer pins follow independent artifact verification."
   expected_artifact_types:
     - "Composer ZIP"
   required_checks:
@@ -626,7 +626,7 @@ next_task:
     - "All dependencies and this release independently attested"
     - "Current App drift reconciled upstream"
   consumer_repository: "https://github.com/kumwe/app"
-  dependency_or_native_change: "After publication and independent verification, adopt exact kumwe/business-surface-contract 0.1.1 with its verified stable dependency graph; no floating latest or dev aliases."
+  dependency_or_native_change: "After publication and independent verification, adopt exact kumwe/business-surface-contract 0.1.2 with its verified stable dependency graph; no floating latest or dev aliases."
   namespace_or_api_replacements:
     - "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessActionCommand -> Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionCommand"
     - "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessActionDeclaration -> Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionDeclaration"
@@ -747,7 +747,7 @@ decisions:
   - "Owner package contracts are implemented; App adoption and legacy deletion remain a separate consumer phase."
   - "Existing signatures reuse Canonical JSON, Conversion, Record Model, Record Values and Idempotency beyond the original brief ceiling; see docs/readiness-review.md."
 blockers:
-  - "Review and merge the 0.1.1 source release record after required CI passes."
+  - "Review and merge the 0.1.2 source release record after required CI passes."
   - "Verify default-branch publication, exact artifact digest and independent release verification before App adoption."
   - "The public-signature dependency ceiling amendment in docs/readiness-review.md requires architecture review; it is not silently approved."
 ---
@@ -755,7 +755,7 @@ blockers:
 
 ## Migration/implementation summary
 
-Field presentation inputs validate canonical record values and detach nested array references. Presentation output rejects leaked secrets, display-context editors and mutable metadata references. Custom payloads reject mutable PHP references. Redundant direct dependencies are removed. This branch records candidate 0.1.1; the published baseline remains 0.1.0.
+Field presentation inputs validate canonical record values and detach nested array references. Presentation output rejects leaked secrets, display-context editors and mutable metadata references. Custom payloads reject mutable PHP references. Redundant direct dependencies are removed. This branch records candidate 0.1.2; the published baseline is 0.1.1.
 
 ## Public API and responsibility
 
@@ -784,3 +784,8 @@ API JSON, signature details and Markdown are generated from source reflection an
 ## Validation recipe and observed local results
 
 Run composer validate --strict and composer check on PHP 8.5 with real stable dependencies. Local PHP 8.5.10 source validation passed 16 tests, 87 assertions, PHPStan at the configured maximum level, coding standards, syntax, architecture and API drift checks. Where registry access was unavailable, local source validation used dependencies archived from exact published Git tags. The complete Package CI passed at source commit 9b24545550f545827e9c60dbbf4b43a3a50b9867 ([run 34162343699](https://github.com/kumwe/business-surface-contract/actions/runs/34162343699)), including real Composer installation, security audit, package tests, release automation and the clean built-archive consumer. The same-branch handoff/schema-gate follow-up must also pass required checks before merge. The actual App PackageManifests::read parser was also used read-only to check this package governed manifests and handoff.
+
+The 0.1.2 dependency readiness gate compares all exact Kumwe production requirements with their
+recorded evidence coordinates and rejects stale, missing or extra entries. Null attestations remain
+explicitly unverified. Coordinated Record Model and Record Query successors must be published before
+selecting the final dependency tuple; no App integration changes are part of this candidate.

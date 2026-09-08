@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.2
+
+- Align the portable business surface dependency evidence with exact Composer requirements and
+  enforce it in the complete quality gate, including negative drift regression fixtures.
+- Prepare the coordinated published record-package dependency train without development aliases
+  or local production repositories. Preserve behavior, boundary, conformance and archive-consumer gates.
+- Refresh public release manifests and handoff evidence for this successor. Independent artifact
+  and dependency verification remains separate from source readiness and publication.
+
 ## [0.1.1] - 2026-09-07
 
 - Enforce secret-editor non-retention, read-context immutability, approved canonical field input types and detached input arrays. Reject mutable custom payload/presentation references and malformed error lists.
