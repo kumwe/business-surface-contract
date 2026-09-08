@@ -3,3 +3,5 @@
 /.phpunit.cache/
 /.phpstan-cache/
 /artifacts/
+
+/tools/schema-validator/node_modules/

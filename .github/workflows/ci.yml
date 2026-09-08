@@ -38,6 +38,11 @@ jobs:
           composer install --no-interaction --no-progress --prefer-dist
           composer audit --abandoned=fail
 
+      - name: Install and audit the pinned schema validator
+        run: |
+          npm ci --prefix tools/schema-validator --ignore-scripts
+          npm audit --prefix tools/schema-validator --audit-level=low
+
       - name: Run complete package checks
         run: composer check
 

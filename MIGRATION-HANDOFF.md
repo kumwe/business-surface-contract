@@ -107,21 +107,21 @@ source:
   examined_dependencies:
     - "php ^8.5"
     - "ext-mbstring *"
-    - "kumwe/access-context 0.1.0"
-    - "kumwe/contribution 0.1.0"
-    - "kumwe/conversion 0.1.0"
+    - "kumwe/access-context 0.1.2"
+    - "kumwe/contribution 0.1.1"
+    - "kumwe/conversion 0.1.5"
     - "kumwe/canonical-json 0.1.1"
-    - "kumwe/idempotency 0.1.0"
-    - "kumwe/record-model 0.1.0"
-    - "kumwe/record-query 0.1.0"
-    - "kumwe/record-values 0.1.0"
+    - "kumwe/idempotency 0.1.2"
+    - "kumwe/record-model 0.1.3"
+    - "kumwe/record-query 0.1.3"
+    - "kumwe/record-values 0.1.4"
   active_related_pull_requests: []
 target:
   repository: "https://github.com/kumwe/business-surface-contract"
   artifact_identity: "kumwe/business-surface-contract"
   canonical_namespace_or_abi: "Kumwe\\BusinessSurface\\Contract\\"
-  branch: "codex/extraction-readiness-20260907"
-  pull_request: "https://github.com/kumwe/business-surface-contract/pull/6"
+  branch: "fix/final-governed-dependencies"
+  pull_request: "https://github.com/kumwe/business-surface-contract/pull/7"
 ownership:
   responsibility: "Portable custom business action, view and field presentation contracts."
   non_responsibilities:
@@ -142,16 +142,16 @@ ownership:
   public_manifests:
     -
       path: "resources/public-api/v1.json"
-      sha256: "5bcb0cafe6e3a620c5d4a336c5d39f705a214cd202072f5a920a2b072375c23f"
+      sha256: "b1e32b598fba37057505fe3f9973e4ccc53820a482f430d3368edee08d075d48"
     -
       path: "resources/capabilities/v1.json"
-      sha256: "55c5bd0a780705a490f59066d7fb154f0b7bce2f40dab735a657bc22b110f195"
+      sha256: "281056c74191acd898db6b6111dad0092cc565c1a9c089774ace6bb3b8e1a59c"
     -
       path: "resources/service-map/v1.json"
-      sha256: "5580e28b2516cd343f5561c04e6086b6f0c611e76a0e06ca8b23afad56ee632a"
+      sha256: "b2b5cb7daf86f471c7b39a15ce2bd5f2d69f2c55fa7109b69b0350a31aa5111d"
     -
       path: "resources/public-api/signature-details-v1.json"
-      sha256: "e93281879913066fd5455e465fc04e8507ac192a7737f14f890011a20d05f164"
+      sha256: "bec709c862743f96073c12f7ab5285eb1cf13fd0bc91bd2e8fb8a67f8eb683cc"
   intentionally_excluded:
     - "SDK HTTP bindings and renderers remain host-owned"
 framework_php:
@@ -560,6 +560,7 @@ native_cpp: null
 php_extension: null
 tests:
   moved_or_added:
+    - "tools/schema-validator/verify.cjs: complete canonical manifest and handoff schemas with 12 rejection fixtures"
     - "tests/Case/CustomBusinessDeclarationTest.php"
     - "tests/Case/CustomBusinessPortTest.php"
     - "tests/Case/FieldInputBoundaryTest.php"
@@ -602,9 +603,9 @@ documentation:
   integration_or_consumer: "docs/integration.md"
   examples:
     - "examples/standalone.php"
-  changelog_record: "CHANGELOG.md#0.1.2"
+  changelog_record: "CHANGELOG.md#0.1.3"
 release_expectations:
-  version_policy: "SemVer; 0.1.2 candidate source release record, published baseline 0.1.1. Exact consumer pins follow independent artifact verification."
+  version_policy: "SemVer; 0.1.3 candidate source release record, published baseline 0.1.2. Exact consumer pins follow independent artifact verification."
   expected_artifact_types:
     - "Composer ZIP"
   required_checks:
@@ -628,7 +629,7 @@ next_task:
     - "All dependencies and this release independently attested"
     - "Current App drift reconciled upstream"
   consumer_repository: "https://github.com/kumwe/app"
-  dependency_or_native_change: "After publication and independent verification, adopt exact kumwe/business-surface-contract 0.1.2 with its verified stable dependency graph; no floating latest or dev aliases."
+  dependency_or_native_change: "After publication and independent verification, adopt exact kumwe/business-surface-contract 0.1.3 with its verified stable dependency graph; no floating latest or dev aliases."
   namespace_or_api_replacements:
     - "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessActionCommand -> Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionCommand"
     - "Kumwe\\Extension\\Spi\\BusinessSurface\\Application\\Custom\\CustomBusinessActionDeclaration -> Kumwe\\BusinessSurface\\Contract\\Application\\Custom\\CustomBusinessActionDeclaration"
@@ -749,7 +750,7 @@ decisions:
   - "Owner package contracts are implemented; App adoption and legacy deletion remain a separate consumer phase."
   - "Existing signatures reuse Canonical JSON, Conversion, Record Model, Record Values and Idempotency beyond the original brief ceiling; see docs/readiness-review.md."
 blockers:
-  - "Review and merge the 0.1.2 source release record after required CI passes."
+  - "Review and merge the 0.1.3 source release record after required CI passes."
   - "Verify default-branch publication, exact artifact digest and independent release verification before App adoption."
   - "The public-signature dependency ceiling amendment in docs/readiness-review.md requires architecture review; it is not silently approved."
 ---
@@ -757,7 +758,7 @@ blockers:
 
 ## Migration/implementation summary
 
-Field presentation inputs validate canonical record values and detach nested array references. Presentation output rejects leaked secrets, display-context editors and mutable metadata references. Custom payloads reject mutable PHP references. Redundant direct dependencies are removed. This branch records candidate 0.1.2; the published baseline is 0.1.1.
+Field presentation inputs validate canonical record values and detach nested array references. Presentation output rejects leaked secrets, display-context editors and mutable metadata references. Custom payloads reject mutable PHP references. Redundant direct dependencies are removed. This branch records candidate 0.1.3; the published baseline is 0.1.2.
 
 ## Public API and responsibility
 
@@ -789,5 +790,10 @@ Run composer validate --strict and composer check on PHP 8.5 with real stable de
 
 The 0.1.2 dependency readiness gate compares all exact Kumwe production requirements with their
 recorded evidence coordinates and rejects stale, missing or extra entries. Null attestations remain
-explicitly unverified. Coordinated Record Model and Record Query successors must be published before
-selecting the final dependency tuple; no App integration changes are part of this candidate.
+explicitly unverified. Coordinated Record Model and Record Query 0.1.3 successors are published and selected in the final
+dependency tuple. Independent final-release verification remains required before adoption; no App
+integration changes are part of this candidate.
+
+Final coordinated dependency tuple: `kumwe/access-context 0.1.2`, `kumwe/contribution 0.1.1`, `kumwe/conversion 0.1.5`, `kumwe/canonical-json 0.1.1`, `kumwe/idempotency 0.1.2`, `kumwe/record-model 0.1.3`, `kumwe/record-query 0.1.3`, `kumwe/record-values 0.1.4`. These versions were observed published before pinning. Full source/archive gates and independent final-release verification remain required; App/core integration is a separate later task.
+
+The prior 0.1.2 candidate was merged and published while this final tuple was being prepared. Its tag and release remain unchanged. The 0.1.3 successor carries the complete published dependency graph and full schema gate; final artifact verification remains separate.
