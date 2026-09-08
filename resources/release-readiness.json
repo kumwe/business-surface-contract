@@ -1,8 +1,44 @@
 {
     "schema": "kumwe-release-readiness/v1",
     "status": "release-recorded",
-    "version": "0.1.1",
-    "published_baseline": "0.1.0",
+    "version": "0.1.2",
+    "published_baseline": "0.1.1",
     "publishing_permitted": true,
-    "reason": "Successor source release record for review. Dependencies retain a coherent exact stable graph. Human merge and passing release gates are required before publication; no release verification or App readiness attestation is claimed."
+    "reason": "The 0.1.2 source candidate records exact published dependency coordinates and rejects metadata drift. Full source and no-dev archive consumer gates precede publication; independent release verification remains separate.",
+    "dependencies": {
+        "kumwe/access-context": {
+            "version": "0.1.0",
+            "attestation": null
+        },
+        "kumwe/contribution": {
+            "version": "0.1.0",
+            "attestation": null
+        },
+        "kumwe/conversion": {
+            "version": "0.1.0",
+            "attestation": null
+        },
+        "kumwe/canonical-json": {
+            "version": "0.1.1",
+            "attestation": null
+        },
+        "kumwe/idempotency": {
+            "version": "0.1.0",
+            "attestation": null
+        },
+        "kumwe/record-model": {
+            "version": "0.1.0",
+            "attestation": null
+        },
+        "kumwe/record-query": {
+            "version": "0.1.0",
+            "attestation": null
+        },
+        "kumwe/record-values": {
+            "version": "0.1.0",
+            "attestation": null
+        }
+    },
+    "integration_status": "blocked-on-coordinated-record-package-successors",
+    "required_followup": "Publish and verify the coordinated Record Model and Record Query 0.1.2 releases, then select the complete released dependency tuple and rerun the full package and no-dev consumer gates before adoption."
 }

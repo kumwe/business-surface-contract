@@ -47,6 +47,7 @@
     "clean-consumer": "php tools/clean-consumer.php",
     "check": [
       "@composer:validate",
+      "@dependencies:check",
       "@lint",
       "@api",
       "@manifests",
@@ -59,7 +60,11 @@
       "@clean-consumer"
     ],
     "composer:validate": "composer validate --strict",
-    "manifests": "php tools/verify-governed-manifests.php"
+    "manifests": "php tools/verify-governed-manifests.php",
+    "dependencies:check": [
+      "bash tools/check-dependency-readiness.sh",
+      "bash tools/test-dependency-readiness.sh"
+    ]
   },
   "config": {
     "sort-packages": true
