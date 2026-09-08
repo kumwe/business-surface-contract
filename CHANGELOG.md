@@ -2,6 +2,9 @@
 
 ## 0.1.2
 
+- Exercise external action handlers, view handlers and field presenters through package-owned
+  conformance fixtures, preserving typed context, selection, replay and safe output boundaries.
+
 - Align the portable business surface dependency evidence with exact Composer requirements and
   enforce it in the complete quality gate, including negative drift regression fixtures.
 - Prepare the coordinated published record-package dependency train without development aliases
