@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.3]
+
+- Select the complete published and schema-valid dependency tuple: Context 0.1.2, Contribution 0.1.1, Conversion 0.1.5, Canonical JSON 0.1.1, Idempotency 0.1.2, Record Model and Query 0.1.3, and Record Values 0.1.4.
+- Validate all three canonical manifests and the complete handoff with pinned Ajv2020/YAML and 12 refusal regressions in the mandatory PR/post-rebase gate.
+- Preserve the published 0.1.2 release and every runtime signature, strategy conformance, behavior/boundary and no-dev archive gate. Independent final release verification remains separate from publication; App integration remains a later task.
+
 ## [0.1.2]
 
 - Exercise external action handlers, view handlers and field presenters through package-owned
