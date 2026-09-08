@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.2
+## [0.1.2]
 
 - Exercise external action handlers, view handlers and field presenters through package-owned
   conformance fixtures, preserving typed context, selection, replay and safe output boundaries.
