@@ -564,6 +564,7 @@ tests:
     - "tests/Case/CustomBusinessPortTest.php"
     - "tests/Case/FieldInputBoundaryTest.php"
     - "tests/Case/FieldPresentationSecurityTest.php"
+    - "tests/Case/SurfaceContractConformanceTest.php"
   remain_in_app_or_consumer:
     - "tests/Architecture/BusinessSurfaceRenderingSeamTest.php"
     - "tests/Architecture/ConvertedMoneySurfaceCoverageTest.php"
@@ -592,6 +593,7 @@ tests:
     - "tests/Case/CustomBusinessPortTest.php"
     - "tests/Case/FieldInputBoundaryTest.php"
     - "tests/Case/FieldPresentationSecurityTest.php"
+    - "tests/Case/SurfaceContractConformanceTest.php"
 documentation:
   charter: "CHARTER.md"
   readme: "README.md"
@@ -771,7 +773,7 @@ The framework consumer inventory covers App production references, configuration
 
 ## Test ownership
 
-All portable behavior and new boundary regression tests are owned by this repository. The machine-readable test inventory lists package tests, consumer tests to retain, split tests and prohibited duplicates. App acceptance and integration tests are retained for the later adoption phase. They were not run or claimed by this review.
+All portable behavior, boundary regressions and the three strategy-interface conformance fixtures are owned by this repository. See docs/test-ownership.md for the executable ownership map. The machine-readable test inventory lists package tests, consumer tests to retain, split tests and prohibited duplicates. App acceptance and integration tests are retained for the later adoption phase. They were not run or claimed by this review.
 
 ## Next-task execution notes
 
