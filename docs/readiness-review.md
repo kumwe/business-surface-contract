@@ -1,21 +1,21 @@
-# Extraction readiness review — 2026-09-07
+# Surface contract guarantees
 
-Candidate version: `0.1.1`. Published baseline: `0.1.0`.
+The package enforces secret-editor non-retention, read-context immutability, approved canonical field input types,
+detached arrays and bounded collections. Mutable custom payload/presentation references and malformed error lists
+are rejected before retained state is exposed.
 
-Enforce secret-editor non-retention, read-context immutability, approved canonical field input types and detached input arrays. Reject mutable custom payload/presentation references and malformed error lists.
+Field inputs reuse RecordValueGuard and preserve approved immutable domain values, including conversion evidence.
+They reject arbitrary host objects, callbacks, floats and resources. The canonical encoder and lower-level
+semantic packages remain the owners of encoding, replay identity, record types and precision behavior.
 
-The existing source map remains the extraction provenance record. Content and Navigation use App baseline `24ecf956423c18933e824b43cea1bfb9127a79a9`; the surface declarations and business contracts preserve the SDK provenance in docs/source-map.json. This review adds portable boundary behavior and package-owned tests without changing App production code or test ownership.
+The public signature closure deliberately includes Canonical JSON, Conversion, Record Model, Record Values and
+Idempotency. Reusing these released contracts avoids duplicated DTOs, validation and precision semantics; no
+reverse dependency on this surface package is introduced.
 
-## Runtime boundary
+Package tests and external strategy conformance cover the typed action, view and field-presentation boundaries.
+The API gate verifies generated Markdown and JSON, including signatures, defaults, properties and constant values.
+No ConfigProvider is needed for directly constructed values and explicit ports.
 
-Field inputs reuse RecordValueGuard and retain approved immutable domain values, including conversion evidence; arbitrary host objects, callbacks, floats and resources fail. Field input arrays are copied without references and bounded to one mebibyte of string/key bytes. Secret editors cannot retain a value, and read contexts cannot enable editing. Custom input/result payloads reject PHP references that could mutate a readonly DTO after validation. Existing CanonicalEncoder and lower-level semantic contracts remain canonical owners.
-
-The actual public signature closure includes Canonical JSON, Conversion, Record Model, Record Values and Idempotency in addition to the original brief's nominal ceiling. These are existing released dependencies used to avoid duplicating lower-level DTOs, validation, replay identity or precision semantics. No dependency back to this surface package is introduced.
-
-## Verification and remaining release steps
-
-Package-owned regression tests cover the changed invariants. The public API gate now compares generated Markdown as well as JSON, including full method signatures, defaults, public properties and constant values; source file order is sorted before generation. No ConfigProvider is introduced because these values, pure algorithms and ports have no injected runtime coordinator.
-
-Local source validation uses PHP 8.5.10 and exact dependency-tag archives where registry access is unavailable. This is distinct from the supported Composer security and built-archive consumer gates in CI. Merge only after the complete package workflow passes. The candidate is not a published or independently release-verified artifact. Publication, independent artifact verification and a coordinated exact-pin consumer train remain required before App integration. App acceptance, authorization, lifecycle, persistence and browser tests remain App-owned and were not run or claimed by this package review.
-
-The complete Package CI passed at source commit 9b24545550f545827e9c60dbbf4b43a3a50b9867 ([run 34162343699](https://github.com/kumwe/business-surface-contract/actions/runs/34162343699)), including real Composer installation, security audit, package tests, release automation and the clean built-archive consumer. The same-branch handoff/schema-gate follow-up must also pass required checks before merge.
+The full package workflow verifies source, dependencies, security, behavior/conformance and the built archive's
+no-dev consumer. Independent artifact verification and Core acceptance remain separate. See
+[Core contract](core-contract.md), [test ownership](test-ownership.md) and [releasing](releasing.md).
