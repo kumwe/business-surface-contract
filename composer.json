@@ -87,35 +87,5 @@
     ]
   },
   "minimum-stability": "stable",
-  "prefer-stable": true,
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/kumwe/canonical-json"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/kumwe/idempotency"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/kumwe/record-model"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/kumwe/record-query"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/kumwe/record-values"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/kumwe/business-definition.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/kumwe/sequence.git"
-    }
-  ]
+  "prefer-stable": true
 }

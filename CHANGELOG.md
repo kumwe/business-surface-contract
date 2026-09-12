@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Standardize linked package/CI/runtime badges and current Core contract documentation.
+- Replace the obsolete handoff schema with the strict release record and preserve refusal regressions.
+- Remove obsolete VCS overrides; retain exact dependency versions and validate ordinary Packagist resolution.
+
 ## [0.1.3]
 
 - Select the complete published and schema-valid dependency tuple: Context 0.1.2, Contribution 0.1.1, Conversion 0.1.5, Canonical JSON 0.1.1, Idempotency 0.1.2, Record Model and Query 0.1.3, and Record Values 0.1.4.

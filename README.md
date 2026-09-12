@@ -1,19 +1,59 @@
-# business-surface-contract
+# Kumwe Business Surface Contract
 
-Portable custom business action, view and field presentation contracts.
+[![Packagist version][version-badge]][packagist]
+[![Package CI][ci-badge]][ci]
+[![PHP requirement][php-badge]](composer.json)
+[![License: Apache-2.0][license-badge]](LICENSE)
 
-Requires PHP 8.5 and the runtime dependencies in `composer.json`. The canonical namespace is `Kumwe\BusinessSurface\Contract\`. Published baseline: 0.1.0. This branch records the 0.1.1 successor for publication after merge and the complete package gate. Independently verify that published artifact before App adoption.
+Portable custom business action, view and field presentation contracts under `Kumwe\BusinessSurface\Contract\`.
+The package defines typed handler inputs/results, bounded field presentation models and explicit strategy ports.
+Core owns authorization, persistence, transaction boundaries, dispatch, rendering and operational recovery.
 
-Run `composer install`, `composer check`, and `composer examples`. [Public API](docs/public-api.md), [architecture](docs/architecture.md), [integration](docs/integration.md), and [release protocol](docs/releasing.md) describe the contract.
+## Installation and usage
 
-The package has no ConfigProvider. Values are constructed directly; ports are supplied by the host. Deterministic pure operations do not capture a site, actor, request, connection or container. App owns authorization, transactions, persistence, dispatch and presentation.
+```sh
+composer require kumwe/business-surface-contract:0.1.3
+```
 
-Released consumers exact-pin pre-1.0 versions. Apache-2.0; inherited source behavior is preserved except the explicitly documented bounded-input decisions.
+Requires PHP 8.5 and mbstring. [Composer metadata](composer.json) pins the exact published Kumwe dependencies,
+which resolve through Packagist without custom VCS overrides. Values are constructed directly and host ports are
+explicit inputs; no ConfigProvider or captured actor/site/request/container context is registered.
 
-FieldPresentationModel takes an explicit CanonicalEncoder after the required flag. It preserves the SDK exact-value restrictions before calling the generic encoder. The encoder is not retained; App owns the implementation binding. See [dependency status](docs/dependency-decision.md) for exact published dependency identities and [readiness review](docs/readiness-review.md) for the original-ceiling amendment that still requires architecture review.
+`FieldPresentationModel` receives an explicit `CanonicalEncoder` after the required flag. It validates approved
+exact-value inputs before encoding, and does not retain the encoder. Core selects its implementation binding.
+See the [standalone example](examples/standalone.php), [public API](docs/public-api.md),
+[Core contract](docs/core-contract.md) and [integration](docs/integration.md).
 
-## Current extraction review
+## Boundaries and compatibility
 
-See [readiness review](docs/readiness-review.md) for the `0.1.1` candidate, current portable boundaries, package-owned regression coverage and the remaining publication/verification steps. [Dependency status](docs/dependency-decision.md) records the coherent exact release graph.
+Secret editors cannot retain values; read contexts cannot enable editing. Field inputs preserve approved
+immutable domain values and reject arbitrary objects, callbacks, floats and resources. Retained arrays detach
+caller references and enforce depth, width, node and byte limits. Custom payloads/results reject references that
+could mutate an already validated readonly value. See [compatibility](COMPATIBILITY.md) and
+[contract guarantees](docs/readiness-review.md).
 
-Source quality checks require Node.js 20+ and `npm ci --prefix tools/schema-validator --ignore-scripts`. The pinned Ajv2020/YAML gate validates all three canonical manifests and the complete handoff against authoritative schema snapshots, with rejection regressions. These development tools are excluded from consumer archives.
+Published versions, package CI, independent verification and Core acceptance remain separate observations.
+Pre-1.0 consumers select an exact verified version. [Dependency status](docs/dependency-decision.md) records the
+current graph; [architecture](docs/architecture.md) preserves the ownership boundary.
+
+## Development
+
+```sh
+npm ci --prefix tools/schema-validator --ignore-scripts
+composer install
+composer check
+composer examples
+```
+
+Node.js 20+ runs the pinned complete Draft 2020-12 schema validator. The package gate also checks source/API,
+architecture, static analysis, coding standards, behavior/conformance, exact dependencies, examples, security and
+a fresh no-dev archive consumer. Development tooling is excluded from production archives. See
+[test ownership](docs/test-ownership.md), [releasing](docs/releasing.md), [release record](docs/release-record.md)
+and [security](SECURITY.md).
+
+[version-badge]: https://img.shields.io/packagist/v/kumwe/business-surface-contract
+[packagist]: https://packagist.org/packages/kumwe/business-surface-contract
+[ci-badge]: https://github.com/kumwe/business-surface-contract/actions/workflows/ci.yml/badge.svg?branch=main
+[ci]: https://github.com/kumwe/business-surface-contract/actions/workflows/ci.yml
+[php-badge]: https://img.shields.io/packagist/dependency-v/kumwe/business-surface-contract/php
+[license-badge]: https://img.shields.io/github/license/kumwe/business-surface-contract
