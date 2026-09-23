@@ -1,10 +1,10 @@
 {
   "schema": "kumwe-release-readiness/v1",
   "status": "release-recorded",
-  "version": "0.1.3",
-  "published_baseline": "0.1.2",
+  "version": "0.1.4",
+  "published_baseline": "0.1.3",
   "publishing_permitted": true,
-  "reason": "Release 0.1.3 selects the coherent published v2 handoff package tuple. The full source and no-dev archive consumer gates remain required; independent release verification remains a separate adoption gate.",
+  "reason": "Release 0.1.4 aligns the change set with the ledger record (KUMWE-CS-2026-038) and selects the published successors Idempotency 0.1.3, Record Model 0.1.4 and Record Query 0.1.4 whose records a consumer ledger can adopt. The full source and no-dev archive consumer gates remain required; independent release verification remains a separate adoption gate.",
   "dependencies": {
     "kumwe/access-context": {
       "version": "0.1.2",
@@ -23,15 +23,15 @@
       "attestation": null
     },
     "kumwe/idempotency": {
-      "version": "0.1.2",
+      "version": "0.1.3",
       "attestation": null
     },
     "kumwe/record-model": {
-      "version": "0.1.3",
+      "version": "0.1.4",
       "attestation": null
     },
     "kumwe/record-query": {
-      "version": "0.1.3",
+      "version": "0.1.4",
       "attestation": null
     },
     "kumwe/record-values": {

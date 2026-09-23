@@ -2,7 +2,7 @@
 schema: kumwe-package-release-record/v1
 artifact_kind: framework_php
 migration_id: KUMWE-MIG-2026-038
-change_set: KUMWE-CS-2026-034
+change_set: KUMWE-CS-2026-038
 source:
   app:
     repository: https://github.com/kumwe/app
@@ -92,9 +92,9 @@ source:
     - kumwe/contribution 0.1.1
     - kumwe/conversion 0.1.5
     - kumwe/canonical-json 0.1.1
-    - kumwe/idempotency 0.1.2
-    - kumwe/record-model 0.1.3
-    - kumwe/record-query 0.1.3
+    - kumwe/idempotency 0.1.3
+    - kumwe/record-model 0.1.4
+    - kumwe/record-query 0.1.4
     - kumwe/record-values 0.1.4
 target:
   repository: https://github.com/kumwe/business-surface-contract
@@ -119,13 +119,13 @@ ownership:
   next_consumer: kumwe/app
   public_manifests:
     - path: resources/public-api/v1.json
-      sha256: b1e32b598fba37057505fe3f9973e4ccc53820a482f430d3368edee08d075d48
+      sha256: 5b8f77f5098c012e79cc57d508f890616b40cc14f1d631d7f684fc067f353f94
     - path: resources/capabilities/v1.json
-      sha256: 281056c74191acd898db6b6111dad0092cc565c1a9c089774ace6bb3b8e1a59c
+      sha256: e3eb1bfe192d537c2885fe677ead17643d657096358948d7780e80bab50223f8
     - path: resources/service-map/v1.json
-      sha256: b2b5cb7daf86f471c7b39a15ce2bd5f2d69f2c55fa7109b69b0350a31aa5111d
+      sha256: 95fbb8892ab06bf4100a1812a43009fe2d5ebb21e01a2deb1409f196df77a265
     - path: resources/public-api/signature-details-v1.json
-      sha256: bec709c862743f96073c12f7ab5285eb1cf13fd0bc91bd2e8fb8a67f8eb683cc
+      sha256: ecab1d508219b491582e4caec0417400306099b8552fa1b56b94da1cedbded6f
   intentionally_excluded:
     - SDK HTTP bindings and renderers remain host-owned
 framework_php:
@@ -559,9 +559,9 @@ documentation:
   integration_or_consumer: docs/integration.md
   examples:
     - examples/standalone.php
-  changelog_record: CHANGELOG.md#0.1.3
+  changelog_record: CHANGELOG.md#0.1.4
 release_expectations:
-  version_policy: SemVer; 0.1.3 candidate source release record, published baseline 0.1.2. Exact consumer pins follow independent artifact verification.
+  version_policy: SemVer; 0.1.4 candidate source release record, published baseline 0.1.3. Exact consumer pins follow independent artifact verification.
   expected_artifact_types:
     - Composer ZIP
   required_checks:

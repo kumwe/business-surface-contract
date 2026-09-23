@@ -6,6 +6,11 @@
 - Replace the obsolete handoff schema with the strict release record and preserve refusal regressions.
 - Remove obsolete VCS overrides; retain exact dependency versions and validate ordinary Packagist resolution.
 
+## [0.1.4]
+
+- Align the change set with the ledger record: KUMWE-CS-2026-034 (kumwe/content-model's) becomes KUMWE-CS-2026-038, the sequence of KUMWE-MIG-2026-038, because the Kumwe App ledger requires both identifiers to share one sequence (D-GOV-2), never renumbers (D-GOV-3) and refuses the inconsistent pair.
+- Select the published successors Idempotency 0.1.3, Record Model 0.1.4 and Record Query 0.1.4, whose corrected records a consumer ledger can adopt; runtime source, public API and every other dependency pin are unchanged.
+
 ## [0.1.3]
 
 - Select the complete published and schema-valid dependency tuple: Context 0.1.2, Contribution 0.1.1, Conversion 0.1.5, Canonical JSON 0.1.1, Idempotency 0.1.2, Record Model and Query 0.1.3, and Record Values 0.1.4.

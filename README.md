@@ -12,7 +12,7 @@ Core owns authorization, persistence, transaction boundaries, dispatch, renderin
 ## Installation and usage
 
 ```sh
-composer require kumwe/business-surface-contract:0.1.3
+composer require kumwe/business-surface-contract:0.1.4
 ```
 
 Requires PHP 8.5 and mbstring. [Composer metadata](composer.json) pins the exact published Kumwe dependencies,
